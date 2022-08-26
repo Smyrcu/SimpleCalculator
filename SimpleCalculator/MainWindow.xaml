@@ -26,7 +26,9 @@
             <Setter Property="BorderBrush" Value="Black"/>
             <Setter Property="Margin" Value="2"/>
         </Style>
+        
         <Style TargetType="Button" x:Key="ButtonStyle3">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
             <Setter Property="Background" Value="#1f2021"/>
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="FontWeight" Value="Normal"/>
@@ -36,15 +38,27 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="Margin" Value="2"/>
 
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter x:Name="MyContentPresenter" 
+                                              Content="{TemplateBinding Content}"
+                                              HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
             <Style.Triggers>
-                <Trigger Property="IsEnabled" Value="false">
+                <Trigger Property="IsEnabled" Value="False">
                     <Setter Property="Background" Value="#1f2021"/>
-                    <Setter Property="Opacity" Value="1"/>
+                    <Setter Property="Foreground" Value="Gray" />
                 </Trigger>
             </Style.Triggers>
-
         </Style>
-        
+
     </Window.Resources>
     <Grid Background="#1f2021">
 
@@ -109,9 +123,34 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Content="MC" IsEnabled="False" Style="{StaticResource ButtonStyle3}"/>
+            <Button Grid.Column="1" Content="MR" IsEnabled="False" Style="{StaticResource ButtonStyle3}"/>
+            <Button Grid.Column="2" Content="M+" IsEnabled="True" Style="{StaticResource ButtonStyle3}"/>
+            <Button Grid.Column="3" Content="M-" IsEnabled="True" Style="{StaticResource ButtonStyle3}"/>
+            <Button Grid.Column="4" Content="MS" IsEnabled="True" Style="{StaticResource ButtonStyle3}"/>
+        </Grid>
+
+        <Grid Grid.Row="0" ColumnSpan="4" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Image Grid.Column="0" Name="Menu"/>
+            <Label Grid.Column="1" Grid.ColumnSpan="4" Content="Standardowy" Foreground="White" FontWeight="Medium"  FontSize="12pt"
+                   VerticalContentAlignment="Center"/>
+            <Image Grid.Column="7" Name="History"/>
+
         </Grid>
 
 
