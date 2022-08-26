@@ -9,46 +9,74 @@
     <Window.Resources>
         <Style TargetType="Button" x:Key="ButtonStyle">
             <Setter Property="Background" Value="Black" />
-            <Setter Property="Height" Value="35" />
-            <Setter Property="Width" Value="60" />
             <Setter Property="FontSize" Value="12pt" />
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Foreground" Value="White" />
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Margin" Value="2"/>
         </Style>
         <Style TargetType="Button" x:Key="ButtonStyle2">
             <Setter Property="Background" Value="Black" />
-            <Setter Property="Height" Value="35" />
-            <Setter Property="Width" Value="60" />
-            <Setter Property="FontSize" Value="6pt" />
+            <Setter Property="FontSize" Value="9pt" />
             <Setter Property="Foreground" Value="White" />
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="Margin" Value="2"/>
         </Style>
     </Window.Resources>
-    <Grid Margin="0,0,0,0" Background="#1f2021">
-        <Menu Height="20" Margin="0,0,0,314" >
+    <Grid Background="#1f2021">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" MinHeight="35"/>
+            <RowDefinition Height="*" MinHeight="35"/>
+            <RowDefinition Height="*" MinHeight="35"/>
+            <RowDefinition Height="*" MinHeight="35"/>
+            <RowDefinition Height="*" MinHeight="35"/>
+            <RowDefinition Height="*" MinHeight="35"/>
+            <RowDefinition Height="*" MinHeight="35"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MinWidth="60"/>
+            <ColumnDefinition Width="*" MinWidth="60"/>
+            <ColumnDefinition Width="*" MinWidth="60"/>
+            <ColumnDefinition Width="*" MinWidth="60"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <!--<Menu Height="20" Margin="0,0,0,314" >
             <MenuItem Header="_File" Click="MenuItem_Click">
                 <MenuItem Header="_Exit" Click="MenuItem_OnClick"/>
             </MenuItem>
-        </Menu>
-        <Label Name="InputLabel" Height="40" Margin="10,38,10,256"  Background="White"/>
-        <Button Style="{StaticResource ButtonStyle}" Content="+/-" Margin="10,289,210,10"/>
-        <Button Style="{StaticResource ButtonStyle}" Content="," Margin="140,289,80,10"/>
-        <Button Style="{StaticResource ButtonStyle}" Content="0" Margin="75,289,145,10"/>
-        <Button Style="{StaticResource ButtonStyle}" Content="1" Margin="10,249,210,50"/>
-        <Button Style="{StaticResource ButtonStyle}" Content="2" Margin="75,249,145,50"/>
-        <Button Style="{StaticResource ButtonStyle}" Content="3" Margin="140,249,80,50"/>
-        <Button Style="{StaticResource ButtonStyle}" Content="4" Margin="10,209,210,90"/>
-        <Button Style="{StaticResource ButtonStyle}" Content="5" Margin="75,209,145,90"/>
-        <Button Style="{StaticResource ButtonStyle}" Content="6" Margin="140,209,80,90"/>
-        <Button Style="{StaticResource ButtonStyle}" Content="7" Margin="10,167,210,132"/>
-        <Button Style="{StaticResource ButtonStyle}" Content="8" Margin="75,167,145,132"/>
-        <Button Style="{StaticResource ButtonStyle}" Content="9" Margin="140,167,80,132"/>
-        <Button Style="{StaticResource ButtonStyle2}" Content="1/x" Margin="10,127,210,172"/>
+        </Menu>-->
+        <Label Name="InputLabel" Height="40" Margin="5" Background="White" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"/>
+        <Button Style="{StaticResource ButtonStyle2}" Content="+/-" Grid.Row="6" Grid.Column="0"/>
+        <Button Style="{StaticResource ButtonStyle}" Content="," Grid.Row="6" Grid.Column="2"/>
+        <Button Style="{StaticResource ButtonStyle}" Content="0" Grid.Row="6" Grid.Column="1"/>
+        <Button Style="{StaticResource ButtonStyle}" Content="1" Grid.Row="5" Grid.Column="0"/>
+        <Button Style="{StaticResource ButtonStyle}" Content="2" Grid.Row="5" Grid.Column="1"/>
+        <Button Style="{StaticResource ButtonStyle}" Content="3" Grid.Row="5" Grid.Column="2"/>
+        <Button Style="{StaticResource ButtonStyle}" Content="4" Grid.Row="4" Grid.Column="0"/>
+        <Button Style="{StaticResource ButtonStyle}" Content="5" Grid.Row="4" Grid.Column="1"/>
+        <Button Style="{StaticResource ButtonStyle}" Content="6" Grid.Row="4" Grid.Column="2"/>
+        <Button Style="{StaticResource ButtonStyle}" Content="7" Grid.Row="3" Grid.Column="0"/>
+        <Button Style="{StaticResource ButtonStyle}" Content="8" Grid.Row="3" Grid.Column="1"/>
+        <Button Style="{StaticResource ButtonStyle}" Content="9" Grid.Row="3" Grid.Column="2"/>
+        <Button Style="{StaticResource ButtonStyle2}" Content="1/x" Grid.Row="2" Grid.Column="0"/>
+        <Button Style="{StaticResource ButtonStyle2}" Content="x^2" Grid.Row="2" Grid.Column="1"/>
+        <Button Style="{StaticResource ButtonStyle2}" Content="sqrt" Grid.Row="2" Grid.Column="2"/>
+        <Button Style="{StaticResource ButtonStyle2}" Content="=" Grid.Row="6" Grid.Column="3" Background="MidnightBlue"/>
+        <Button Style="{StaticResource ButtonStyle2}" Content="+" Grid.Row="5" Grid.Column="3"/>
+        <Button Style="{StaticResource ButtonStyle2}" Content="-" Grid.Row="4" Grid.Column="3"/>
+        <Button Style="{StaticResource ButtonStyle2}" Content="*" Grid.Row="3" Grid.Column="3"/>
+        <Button Style="{StaticResource ButtonStyle2}" Content="/" Grid.Row="2" Grid.Column="3"/>
+        <Button Style="{StaticResource ButtonStyle2}" Content="%" Grid.Row="1" Grid.Column="0"/>
+        <Button Style="{StaticResource ButtonStyle2}" Content="CE" Grid.Row="1" Grid.Column="1"/>
+        <Button Style="{StaticResource ButtonStyle2}" Content="C" Grid.Row="1" Grid.Column="2"/>
+        <Button Style="{StaticResource ButtonStyle2}" Content="BCKS" Grid.Row="1" Grid.Column="3"/>
     </Grid>
 
 </Window>
