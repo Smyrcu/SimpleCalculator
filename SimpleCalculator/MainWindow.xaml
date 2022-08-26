@@ -146,7 +146,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             
-            <Image Grid.Column="0" Name="Menu"/>
+            <Image Grid.Column="0" Name="Menu" Source="menuIcon.png" Margin="8"/>
             <Label Grid.Column="1" Grid.ColumnSpan="4" Content="Standardowy" Foreground="White" FontWeight="Medium"  FontSize="12pt"
                    VerticalContentAlignment="Center"/>
             <Image Grid.Column="7" Name="History"/>
